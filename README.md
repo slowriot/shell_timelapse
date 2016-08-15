@@ -22,3 +22,11 @@ To change target resolution, recording framerate and exposures per image, and ta
 
 ## Running
 Just execute `./screenshot_timelapse.sh` in your target directory and it'll start producing png images for you there.  You might want to run it in `screen` or something similar.  When you have enough images, convert them to a video for upload using `./png_to_video.sh`.  Simple.
+
+## Sample output
+Short sample video, consisting of one real-life minute per frame with 10 intermediate blending exposures per frame (one every six seconds), encoded at 30fps, showing two hours in two seconds:
+[![Sample video](http://img.youtube.com/vi/OaFEUzuWS84/0.jpg)](https://youtu.be/OaFEUzuWS84)
+
+An example of a single frame from the above video - combining ten exposures over one minute to get the average overall screen activity during that minute:
+
+[![https://i.sli.mg/Yd7j5z.png](https://i.sli.mg/Yd7j5z.png)](https://i.sli.mg/Yd7j5z.png)
