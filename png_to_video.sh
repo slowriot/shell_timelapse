@@ -3,4 +3,9 @@
 
 framerate=30
 
-ffmpeg -r "$framerate" -pattern_type glob -i 'screenshot-*.png' -c:v libx264 output.mp4
+ffmpeg -framerate "$framerate" \
+  -pattern_type glob \
+  -i 'screenshot-*.png' \
+  -c:v libx264 \
+  -profile:v high -crf 20 -pix_fmt yuv420p \
+  output.mp4
