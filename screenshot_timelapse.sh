@@ -16,12 +16,12 @@ echo "Combining $exposures exposures every $delay seconds ($delay_per_exposure s
 while true; do
   idle_time="$(xprintidle)"
   idle_time_seconds=$((idle_time / 1000))
-  if [ "$idle_time" -gt "$idle_limit" ]; then
-    echo "User is idle for $idle_time seconds, waiting until they return before continuing"
-    while [ "$idle_time" -gt "$idle_limit" ]; do
+  if [ "$idle_time_seconds" -gt "$idle_limit" ]; then
+    echo "User is idle for $idle_time_seconds seconds, waiting until they return before continuing"
+    while [ "$idle_time_seconds" -gt "$idle_limit" ]; do
+      sleep "$idle_check_delay";
       idle_time="$(xprintidle)"
       idle_time_seconds=$((idle_time / 1000))
-      sleep "$idle_check_delay";
     done
   fi
   combined_file="screenshot-$(date +%s).png"
