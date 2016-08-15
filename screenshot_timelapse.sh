@@ -19,16 +19,16 @@ while true; do
     targetfile="$tmpdir/$combined_file.part_$exposure.png"
     echo -n '.'
     if $resize; then
-      nice ionice -c3 import -window root -resize "$target_size" "$targetfile"&
+      nice ionice -c3 import -silent -window root -resize "$target_size" "$targetfile"&
     else
-      nice ionice -c3 import -window root "$targetfile"&
+      nice ionice -c3 import -silent -window root "$targetfile"&
     fi
   done
   echo
   combined_file_list="$tmpdir/$combined_file.part_"*".png"
   (
     nice ionice -c3 \
-    convert $combined_file_list -average "$combined_file" && \
+    convert -silent $combined_file_list -average "$combined_file" && \
     rm $combined_file_list
   )&
 done
