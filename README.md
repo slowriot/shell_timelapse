@@ -12,6 +12,7 @@ The scripts run with nice and ionice to reduce foreground system load, but the a
 ## Dependencies:
 * ImageMagick
 * ffmpeg
+* xprintidle
 
 ## Scripts included:
 * `screenshot_timelapse.sh` - repeatedly take a series of images over a given period, averaging them together at the end of that period, leaving a series of averaged .screenshots.
